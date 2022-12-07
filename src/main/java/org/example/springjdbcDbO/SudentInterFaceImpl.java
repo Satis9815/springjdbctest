@@ -4,6 +4,8 @@ import org.example.entity.Student;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
+import java.util.List;
+
 public class SudentInterFaceImpl implements  StudentInterFace {
     public JdbcTemplate getJdbcTemplate() {
         return jdbcTemplate;
@@ -47,25 +49,13 @@ public class SudentInterFaceImpl implements  StudentInterFace {
 
     }
 
+    public List<Student> getAllStudents(){
+//        selecting multiple student
+        String query="select * from student";
+        List<Student> students=this.jdbcTemplate.query(query,new RowMapperImpl());
+        return  students;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
 
 

@@ -6,6 +6,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.util.List;
+
 /**
  * Hello world!
  *
@@ -21,9 +23,9 @@ public class App
 
 //        Inserting the new student data
 //        Student student=new Student();
-//        student.setId(111);
-//        student.setName("Ram");
-//        student.setCity("Kathmandu");
+//        student.setId(112);
+//        student.setName("Hari");
+//        student.setCity("baneshower");
 //        int result=studentInterFace.insert(student);
 
 
@@ -39,8 +41,16 @@ public class App
 //        int result= studentInterFace.delete(1232);
 //        System.out.println("Deleted "+result);
 
-       Student s= studentInterFace.getStudent(1);
-        System.out.println(s);
+//        Getting single student object 
+//       Student s= studentInterFace.getStudent(1);
+//        System.out.println(s);
+        
+//        Getting  multiple student objects
+        List<Student> students= studentInterFace.getAllStudents();
+        for (Student s :
+                students) {
+            System.out.println(s);
 
+        }
     }
 }
