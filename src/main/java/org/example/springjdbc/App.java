@@ -36,8 +36,11 @@ public class App
 //        System.out.println(result+" Student data  updated  ");
 
         //Deleting and existing student data
-        int result= studentInterFace.delete(1232);
-        System.out.println("Deleted "+result);
+//        int result= studentInterFace.delete(1232);
+//        System.out.println("Deleted "+result);
+
+       Student s= studentInterFace.getStudent(1);
+        System.out.println(s);
 
     }
 }
