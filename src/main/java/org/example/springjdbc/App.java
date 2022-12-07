@@ -3,6 +3,7 @@ package org.example.springjdbc;
 import org.example.entity.Student;
 import org.example.springjdbcDbO.StudentInterFace;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -18,7 +19,9 @@ public class App
     {
         System.out.println( "Hello World!" );
         //spring jdbc=>jdbcTemplate
-        ApplicationContext context=new ClassPathXmlApplicationContext("config.xml");
+//        ApplicationContext context=new ClassPathXmlApplicationContext("config.xml");
+//        Using Annotation and also using jdbcConfig class
+        ApplicationContext context=new AnnotationConfigApplicationContext(jdbcConfig.class);
         StudentInterFace studentInterFace=context.getBean("studentInterFace",StudentInterFace.class);
 
 //        Inserting the new student data
